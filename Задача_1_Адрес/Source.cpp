@@ -52,8 +52,9 @@ private:
 			f_out << this->street << ", ";
 			f_out << this->number_home << ", ";
 			f_out << this->number_apartament << std::endl;
+			std::cout << "Recording is successful" << std::endl;
 		}
-		else { std::cout << " The class is not filled"; }
+		else { std::cout << " The class is not filled"<<std::endl; }
 	}
 
 };
@@ -90,7 +91,7 @@ int main()
 	}
 	else
 	{
-		std::cerr << "The file was not opened";
+		std::cerr << "The file was not opened"<<std::endl;
 		return 0;
 	}
 
@@ -101,13 +102,36 @@ int main()
 	//Fill_class заполнить класс из файла in.txt
 	//Write_class записать класс в файл out.txt
 
+	while (true) // заполнение класса из файла пока файл незакончится
+	{
+		int i = 0; //счетчик заполненых классов
+		if (f_in.eof() != 1) { A1.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A2.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A3.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A4.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A5.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A6.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A7.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A8.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A9.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+		if (f_in.eof() != 1) { A10.Fill_class(); ++i; }
+		else { std::cout << "Filed in " << i << " class Address" << std::endl; break; }
+	}
 
-	A1.Fill_class();
-	A1.Write_class();
-	A2.Fill_class();
+	A3.Write_class();
 	A2.Write_class();
+	A1.Write_class();
+	
 
-
-
+	
 	close_file();
 }
