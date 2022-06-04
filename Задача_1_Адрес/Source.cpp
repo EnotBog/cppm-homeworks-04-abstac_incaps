@@ -48,10 +48,13 @@ private:
 	{
 		if (complited == 1)
 		{
+			std::string s = this->city + ", " + this->street + ", " + std::to_string(this->number_home) + ", " + std::to_string(this->number_apartament) + "\n";
+			f_out << s;
+			/*
 			f_out << this->city << ", ";
 			f_out << this->street << ", ";
 			f_out << this->number_home << ", ";
-			f_out << this->number_apartament << std::endl;
+			f_out << this->number_apartament << std::endl;*/
 			std::cout << "Recording is successful" << std::endl;
 		}
 		else { std::cout << " The class is not filled"<<std::endl; }
