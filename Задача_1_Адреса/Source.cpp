@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include <sstream>
 #include <fstream>
@@ -11,7 +11,12 @@ class Address
 public:
 
 	Address()
-	{}
+	{
+		city = "РќРµСѓРєР°Р·Р°РЅ";
+		street = "РќРµСѓРєР°Р·Р°РЅ";
+		number_home = 0;
+		number_apartament = 0;
+	}
 
 	Address(std::string C, std::string S, int NH, int NA)
 	{
@@ -20,7 +25,7 @@ public:
 		number_home = NH;
 		number_apartament = NA;
 	}
-	std::string Writing_class() //функция создания строки
+	std::string Writing_class() //С„СѓРЅРєС†РёСЏ СЃРѕР·РґР°РЅРёСЏ СЃС‚СЂРѕРєРё
 	{
 		std::string s = this->city + ", " + this->street + ", " + std::to_string(this->number_home) + ", " + std::to_string(this->number_apartament) + "\n";
 		return s;
@@ -41,10 +46,10 @@ int main()
 {
 	SetConsoleOutputCP(65001);
 
-	std::ifstream f_in("E:\\Project\\ООП_Абстракция_и_инкапсуляция\\Задача_1_Адреса\\in.txt");
-	std::ofstream f_out("E:\\Project\\ООП_Абстракция_и_инкапсуляция\\Задача_1_Адреса\\out.txt");
+	std::ifstream f_in("E:\\Project\\РћРћРџ_РђР±СЃС‚СЂР°РєС†РёСЏ_Рё_РёРЅРєР°РїСЃСѓР»СЏС†РёСЏ\\Р—Р°РґР°С‡Р°_1_РђРґСЂРµСЃР°\\in.txt");
+	std::ofstream f_out("E:\\Project\\РћРћРџ_РђР±СЃС‚СЂР°РєС†РёСЏ_Рё_РёРЅРєР°РїСЃСѓР»СЏС†РёСЏ\\Р—Р°РґР°С‡Р°_1_РђРґСЂРµСЃР°\\out.txt");
 
-	if (f_in.is_open() == 1 && f_out.is_open() == 1) // проверка файлов на открытие
+	if (f_in.is_open() == 1 && f_out.is_open() == 1) // РїСЂРѕРІРµСЂРєР° С„Р°Р№Р»РѕРІ РЅР° РѕС‚РєСЂС‹С‚РёРµ
 	{
 
 	}
@@ -72,7 +77,7 @@ int main()
 		Address_array[i] = { city, street, number_home, number_apartament };
 	}
 
-	for (size_t i = 0; i < size; i++)
+	for (int i = size-1; i >= 0; i--)
 	{
 		f_out << Address_array[i].Writing_class();
 	}

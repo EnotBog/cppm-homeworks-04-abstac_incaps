@@ -13,7 +13,12 @@ public:
 	
 	
 	Address()
-	{}
+	{
+		city = "Неуказан";
+		street = "Неуказан";
+		number_home = 0;
+		number_apartament = 0;
+	}
 
 	Address(std::string C, std::string S, int NH, int NA)
 	{
